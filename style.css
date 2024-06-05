@@ -1,0 +1,32 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+.container{
+background-color: white;
+max-width: 40%;
+margin: auto ;
+margin-top: 200px ;
+padding: 20px;
+}
+h1{
+    text-align: center;
+    
+}
+#todoinput{
+    width: 75%;
+    padding: 15px;
+    margin-right: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+#todobutton{
+    padding: 10px 20px;
+    background-color: #5cabff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
