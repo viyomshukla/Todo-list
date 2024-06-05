@@ -1,5 +1,4 @@
 function loadtodo(){
-
     /**
      *JSON.paser->> string->array
      * 
@@ -15,6 +14,13 @@ function addtodo(todotext){
     localStorage.setItem("todo", JSON.stringify(todo));
 }
 
+function appendtoHTML(todotext){
+const list=document.getElementById("todoList");
+const todo=document.createElement("li");
+todo.textContent=todotext
+list.appendChild(todo);
+}
+
 const todoinput = document.getElementById("todoinput");
 const submit = document.getElementById("todobutton");
 
@@ -24,9 +30,18 @@ submit.addEventListener("click", () => {
         alert("Please enter some todo");
     } else {
         addtodo(todotext);
-        todoinput.value = "";  // Clear the input field after adding the todo
+        appendtoHTML(todotext);
+        todoinput.value = ""; 
     }
     todoinput.addEventListener("change",(event)=>{
      console.log(event.target.value);
     })
+});
+const todo = loadtodo();
+todo.todolist.forEach(element => {
+   const newtodo= document.createElement("li");
+   newtodo.textContent=element;
+   const list=document.getElementById("todoList");
+   list.appendChild(newtodo);
+
 });
